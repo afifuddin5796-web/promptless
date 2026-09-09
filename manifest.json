@@ -1,0 +1,13 @@
+{
+  "name": "AI Cocok",
+  "short_name": "AI Cocok",
+  "description": "Temukan AI gratis yang paling cocok untuk tugasmu",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#16302b",
+  "theme_color": "#16302b",
+  "icons": [
+    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

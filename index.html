@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Cocok — Temukan AI yang pas untuk tugasmu</title>
+<meta name="description" content="Pilih apa yang mau kamu buat, kami tunjukkan AI gratis yang paling cocok — lengkap kelebihan dan keterbatasannya.">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#16302b">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="hero-kicker">Direktori AI gratis, versi Indonesia</p>
+    <h1>Mau bikin apa hari ini?</h1>
+    <p>Pilih jenis hasil yang kamu butuhkan, kami tunjukkan AI mana yang paling cocok — lengkap kelebihan, keterbatasan, dan link langsung ke tempatnya.</p>
+    <div class="hero-search">
+      <input type="text" id="searchInput" placeholder="Atau cari nama AI, misalnya 'video' atau 'presentasi'…">
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="cat-nav" id="catNav" aria-label="Kategori"></nav>
+
+  <main class="results">
+    <h2 id="resultsTitle">Semua kategori</h2>
+    <p class="sub" id="resultsSub">Klik salah satu kategori di samping untuk mulai, atau ketik pencarian di atas.</p>
+    <div id="toolList"></div>
+  </main>
+</div>
+
+<footer>
+  <p>Data AI di halaman ini dikurasi manual dan diperbarui berkala — terakhir diperbarui: <span id="updatedDate"></span>. Sebagian tautan bisa berupa tautan afiliasi.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
