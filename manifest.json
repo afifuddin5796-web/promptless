@@ -1,7 +1,7 @@
 {
-  "name": "AI Cocok",
-  "short_name": "AI Cocok",
-  "description": "Temukan AI gratis yang paling cocok untuk tugasmu",
+  "name": "Promptless",
+  "short_name": "Promptless",
+  "description": "AI yang kamu butuhkan, tanpa perlu tebak-tebakan.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

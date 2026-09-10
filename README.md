@@ -1,4 +1,4 @@
-# AI Cocok
+# Promptless
 
 Website sederhana: user pilih output yang mau dibuat (gambar, video, presentasi, tulisan, dsb), lalu aplikasi menampilkan AI gratis/freemium yang cocok — lengkap kelebihan, keterbatasan, dan tombol langsung ke tool-nya.
 

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ai-cocok-v1';
+const CACHE_NAME = 'promptless-v2';
 const ASSETS = [
   './',
   './index.html',
