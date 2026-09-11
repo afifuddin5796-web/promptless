@@ -1,18 +1,56 @@
 {
-  "updated": "2026-09-09",
+  "updated": "2026-09-10",
   "categories": [
-    { "id": "gambar", "label": "Gambar & Ilustrasi", "hint": "Logo, foto produk, poster, ilustrasi" },
-    { "id": "video", "label": "Video", "hint": "Video promosi, animasi, konten sosmed" },
-    { "id": "presentasi", "label": "Presentasi", "hint": "Slide PPT untuk pitching atau laporan" },
-    { "id": "tulisan", "label": "Tulisan & Riset", "hint": "Caption, artikel, rangkuman, ide" },
-    { "id": "dokumen", "label": "Dokumen & PDF", "hint": "Baca, ringkas, olah file dokumen" },
-    { "id": "multi", "label": "Multi-fungsi", "hint": "Belum yakin mau bikin apa? Mulai di sini" }
+    {
+      "id": "gambar",
+      "label": "Gambar & Ilustrasi",
+      "hint": "Logo, foto produk, poster, ilustrasi"
+    },
+    {
+      "id": "video",
+      "label": "Video",
+      "hint": "Video promosi, animasi, konten sosmed"
+    },
+    {
+      "id": "presentasi",
+      "label": "Presentasi",
+      "hint": "Slide PPT untuk pitching atau laporan"
+    },
+    {
+      "id": "tulisan",
+      "label": "Tulisan & Riset",
+      "hint": "Caption, artikel, rangkuman, ide"
+    },
+    {
+      "id": "dokumen",
+      "label": "Dokumen & PDF",
+      "hint": "Baca, ringkas, olah file dokumen"
+    },
+    {
+      "id": "multi",
+      "label": "Multi-fungsi",
+      "hint": "Belum yakin mau bikin apa? Mulai di sini"
+    },
+    {
+      "id": "audio",
+      "label": "Audio & Suara",
+      "hint": "Voice over, dubbing, musik latar"
+    },
+    {
+      "id": "kode",
+      "label": "Website & Aplikasi",
+      "hint": "Bikin website/app tanpa coding"
+    }
   ],
   "tools": [
     {
       "id": "dreamina",
       "name": "Dreamina",
-      "categories": ["gambar", "video", "multi"],
+      "categories": [
+        "gambar",
+        "video",
+        "multi"
+      ],
       "multi": true,
       "pricing": "freemium",
       "free_limit": "225 token gratis per hari, tanpa kartu kredit",
@@ -22,12 +60,18 @@
       "tingkat": "pemula",
       "url": "https://dreamina.capcut.com/",
       "affiliate_url": null,
-      "catatan_pribadi": "Pernah dipakai langsung oleh Afifuddin untuk kebutuhan video"
+      "catatan_pribadi": "Pernah dipakai langsung oleh Afifuddin untuk kebutuhan video",
+      "logo": "assets/logos/dreamina.png"
     },
     {
       "id": "google-gemini",
       "name": "Google Gemini",
-      "categories": ["gambar", "tulisan", "dokumen", "multi"],
+      "categories": [
+        "gambar",
+        "tulisan",
+        "dokumen",
+        "multi"
+      ],
       "multi": true,
       "pricing": "freemium",
       "free_limit": "Jatah harian gratis, cukup lega untuk pemakaian personal",
@@ -36,12 +80,18 @@
       "bahasa_indonesia": true,
       "tingkat": "pemula",
       "url": "https://gemini.google.com/",
-      "affiliate_url": null
+      "affiliate_url": null,
+      "logo": "assets/logos/gemini.png"
     },
     {
       "id": "chatgpt",
       "name": "ChatGPT",
-      "categories": ["tulisan", "gambar", "dokumen", "multi"],
+      "categories": [
+        "tulisan",
+        "gambar",
+        "dokumen",
+        "multi"
+      ],
       "multi": true,
       "pricing": "freemium",
       "free_limit": "Bisa dipakai gratis dengan batas jumlah pesan/generate per hari",
@@ -50,12 +100,17 @@
       "bahasa_indonesia": true,
       "tingkat": "pemula",
       "url": "https://chatgpt.com/",
-      "affiliate_url": null
+      "affiliate_url": null,
+      "logo": "assets/logos/chatgpt.png"
     },
     {
       "id": "claude",
       "name": "Claude",
-      "categories": ["tulisan", "dokumen", "multi"],
+      "categories": [
+        "tulisan",
+        "dokumen",
+        "multi"
+      ],
       "multi": true,
       "pricing": "freemium",
       "free_limit": "Pemakaian gratis harian dengan batas jumlah pesan",
@@ -64,12 +119,18 @@
       "bahasa_indonesia": true,
       "tingkat": "pemula",
       "url": "https://claude.ai/",
-      "affiliate_url": null
+      "affiliate_url": null,
+      "logo": "assets/logos/claude.png"
     },
     {
       "id": "canva-ai",
       "name": "Canva AI",
-      "categories": ["gambar", "presentasi", "video", "multi"],
+      "categories": [
+        "gambar",
+        "presentasi",
+        "video",
+        "multi"
+      ],
       "multi": true,
       "pricing": "freemium",
       "free_limit": "Fitur dasar gratis, sebagian fitur AI perlu Canva Pro",
@@ -78,12 +139,15 @@
       "bahasa_indonesia": true,
       "tingkat": "pemula",
       "url": "https://www.canva.com/",
-      "affiliate_url": null
+      "affiliate_url": null,
+      "logo": "assets/logos/canva.png"
     },
     {
       "id": "ideogram",
       "name": "Ideogram",
-      "categories": ["gambar"],
+      "categories": [
+        "gambar"
+      ],
       "multi": false,
       "pricing": "freemium",
       "free_limit": "Jatah generate gratis harian",
@@ -92,12 +156,15 @@
       "bahasa_indonesia": false,
       "tingkat": "menengah",
       "url": "https://ideogram.ai/",
-      "affiliate_url": null
+      "affiliate_url": null,
+      "logo": "assets/logos/ideogram.png"
     },
     {
       "id": "kling-ai",
       "name": "Kling AI",
-      "categories": ["video"],
+      "categories": [
+        "video"
+      ],
       "multi": false,
       "pricing": "freemium",
       "free_limit": "Dinilai sebagai jatah gratis paling leluasa untuk video AI",
@@ -106,12 +173,15 @@
       "bahasa_indonesia": false,
       "tingkat": "menengah",
       "url": "https://klingai.com/",
-      "affiliate_url": null
+      "affiliate_url": null,
+      "logo": "assets/logos/kling.png"
     },
     {
       "id": "invideo-ai",
       "name": "InVideo AI",
-      "categories": ["video"],
+      "categories": [
+        "video"
+      ],
       "multi": false,
       "pricing": "freemium",
       "free_limit": "Video pendek gratis per minggu",
@@ -120,12 +190,17 @@
       "bahasa_indonesia": false,
       "tingkat": "pemula",
       "url": "https://invideo.io/",
-      "affiliate_url": null
+      "affiliate_url": null,
+      "logo": "assets/logos/invideo.png"
     },
     {
       "id": "presentations-ai",
       "name": "Presentations.AI",
-      "categories": ["presentasi", "dokumen", "multi"],
+      "categories": [
+        "presentasi",
+        "dokumen",
+        "multi"
+      ],
       "multi": true,
       "pricing": "freemium",
       "free_limit": "Gratis dicoba tanpa kartu kredit dengan kredit AI awal",
@@ -134,12 +209,16 @@
       "bahasa_indonesia": false,
       "tingkat": "pemula",
       "url": "https://www.presentations.ai/",
-      "affiliate_url": null
+      "affiliate_url": null,
+      "logo": "assets/logos/presentations-ai.png"
     },
     {
       "id": "bahasa-ai",
       "name": "Bahasa AI",
-      "categories": ["tulisan", "dokumen"],
+      "categories": [
+        "tulisan",
+        "dokumen"
+      ],
       "multi": false,
       "pricing": "freemium",
       "free_limit": "Cek langsung di situsnya, kuota berubah sewaktu-waktu",
@@ -148,7 +227,98 @@
       "bahasa_indonesia": true,
       "tingkat": "pemula",
       "url": "https://bahasa.ai/",
-      "affiliate_url": null
+      "affiliate_url": null,
+      "logo": "assets/logos/bahasa-ai.png"
+    },
+    {
+      "id": "pippit-ai",
+      "name": "Pippit AI",
+      "categories": [
+        "video",
+        "gambar",
+        "multi"
+      ],
+      "multi": true,
+      "pricing": "freemium",
+      "free_limit": "Ada versi gratis dengan fitur terbatas, tanpa perlu kartu kredit untuk mencoba",
+      "kelebihan": "Bisa mengubah link website atau produk jadi video iklan lengkap dengan avatar AI multibahasa, plus bisa langsung dijadwalkan dan auto-publish ke TikTok/Instagram — cocok untuk UMKM yang jualan online.",
+      "keterbatasan": "Sebagian fitur lanjutan (avatar premium, watermark hilang) memerlukan langganan berbayar.",
+      "bahasa_indonesia": true,
+      "tingkat": "pemula",
+      "url": "https://www.pippit.ai/",
+      "affiliate_url": null,
+      "logo": "assets/logos/pippit-ai.png"
+    },
+    {
+      "id": "elevenlabs",
+      "name": "ElevenLabs",
+      "categories": [
+        "audio",
+        "multi"
+      ],
+      "multi": true,
+      "pricing": "freemium",
+      "free_limit": "Sekitar 10.000 kredit gratis per bulan (kira-kira 10 menit audio)",
+      "kelebihan": "Kualitas suara AI paling realistis di kelasnya, mendukung voice over, dubbing multibahasa, dan kloning suara dari sampel singkat.",
+      "keterbatasan": "Hasil dari akun gratis belum boleh dipakai untuk keperluan komersial — perlu upgrade berbayar untuk lisensi komersial.",
+      "bahasa_indonesia": false,
+      "tingkat": "menengah",
+      "url": "https://elevenlabs.io/",
+      "affiliate_url": null,
+      "logo": "assets/logos/elevenlabs.png"
+    },
+    {
+      "id": "suno",
+      "name": "Suno AI",
+      "categories": [
+        "audio"
+      ],
+      "multi": false,
+      "pricing": "freemium",
+      "free_limit": "Jatah lagu gratis per bulan tersedia tanpa kartu kredit",
+      "kelebihan": "Bisa bikin lagu utuh lengkap dengan vokal dan musik hanya dari deskripsi teks singkat — cocok untuk jingle promosi atau musik latar konten.",
+      "keterbatasan": "Lisensi komersial hanya ada di paket berbayar, dan masih ada perdebatan hukum seputar hak cipta musik yang dihasilkan AI — sebaiknya hati-hati kalau dipakai untuk keperluan komersial.",
+      "bahasa_indonesia": false,
+      "tingkat": "pemula",
+      "url": "https://suno.com/",
+      "affiliate_url": null,
+      "logo": "assets/logos/suno.png"
+    },
+    {
+      "id": "notebooklm",
+      "name": "NotebookLM",
+      "categories": [
+        "dokumen",
+        "tulisan",
+        "multi"
+      ],
+      "multi": true,
+      "pricing": "gratis",
+      "free_limit": "Gratis dipakai dengan akun Google, dengan batas jumlah sumber yang bisa diunggah",
+      "kelebihan": "Merangkum dan menjawab pertanyaan berdasarkan dokumen yang kamu unggah sendiri (PDF, catatan, website), bahkan bisa mengubahnya jadi podcast atau video ringkasan otomatis.",
+      "keterbatasan": "Jawabannya dibatasi hanya dari sumber yang kamu unggah, jadi kurang cocok untuk pertanyaan umum di luar dokumen tersebut.",
+      "bahasa_indonesia": true,
+      "tingkat": "pemula",
+      "url": "https://notebooklm.google.com/",
+      "affiliate_url": null,
+      "logo": "assets/logos/notebooklm.png"
+    },
+    {
+      "id": "lovable",
+      "name": "Lovable",
+      "categories": [
+        "kode"
+      ],
+      "multi": false,
+      "pricing": "freemium",
+      "free_limit": "Ada paket gratis dengan jatah kredit terbatas per bulan",
+      "kelebihan": "Bisa bikin website atau aplikasi web yang benar-benar berfungsi (bukan cuma tampilan) hanya dari deskripsi teks biasa — lengkap dengan database dan sistem login kalau dibutuhkan. Hasilnya berupa kode asli yang bisa dipindah/dikelola sendiri nantinya.",
+      "keterbatasan": "Untuk aplikasi yang lebih kompleks, tetap butuh sedikit pemahaman teknis dasar saat diminta menghubungkan ke layanan lain; jatah kredit gratis cepat habis kalau proyeknya besar.",
+      "bahasa_indonesia": false,
+      "tingkat": "menengah",
+      "url": "https://lovable.dev/",
+      "affiliate_url": null,
+      "logo": "assets/logos/lovable.png"
     }
   ]
 }

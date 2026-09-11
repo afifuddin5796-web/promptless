@@ -203,6 +203,17 @@ a{ color: inherit; }
   color: var(--accent);
 }
 .tool-avatar svg{ width: 100%; height: 100%; }
+.tool-avatar.has-logo{
+  background: #ffffff;
+  border: 1px solid var(--line);
+  padding: 5px;
+}
+.tool-avatar.has-logo img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
 .tool-name{
   font-family: var(--serif);
   font-size: 1.25rem;

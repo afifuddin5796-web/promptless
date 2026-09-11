@@ -57,7 +57,16 @@ Catatan field:
 
 Untuk menambah kategori baru, tambahkan objek baru di array `"categories"` di bagian atas `tools.json` (butuh `id`, `label`, `hint`).
 
-## Ide pengembangan lanjutan
+## Cara menambahkan logo resmi tiap AI
+
+1. **Unduh logo dari sumber resmi**, biasanya di halaman "Press", "Brand", "Media Kit", atau "Trademark" di website masing-masing AI. Jangan pakai screenshot atau hasil pencarian gambar sembarangan.
+2. Baca syarat pakainya — umumnya: boleh dipakai untuk menautkan/mengidentifikasi produk mereka, tidak boleh dimodifikasi (warna/proporsi), dan tidak boleh mengesankan endorsement resmi. Disclaimer terkait ini sudah ada otomatis di footer situs.
+3. Simpan file logo ke folder **`assets/logos/`** dengan nama sesuai yang sudah disiapkan di `data/tools.json` (field `"logo"`), misalnya `assets/logos/chatgpt.png`.
+4. Selesai — tidak perlu ubah kode apa pun. Situs otomatis memakai logo itu; kalau nama filenya belum ada/salah, situs otomatis kembali menampilkan ikon polos supaya tidak ada gambar rusak yang tampil.
+
+Disarankan format PNG dengan latar belakang transparan, ukuran persegi (misal 128x128px atau 256x256px) supaya konsisten dengan kotak avatar di tampilan.
+
+
 
 - Tambah pencatatan klik per tool (misalnya lewat Google Analytics event) untuk tahu tool mana yang paling sering dipilih — datanya berguna untuk evaluasi maupun untuk bahan negosiasi sponsor/afiliasi ke depannya.
 - Tambah field `"popularitas"` atau jumlah klik di `tools.json` kalau nanti mau urutkan otomatis berdasarkan yang paling laku.

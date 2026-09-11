@@ -4,7 +4,9 @@ const ICONS = {
   presentasi: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
   tulisan: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>`,
   dokumen: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg>`,
-  multi: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>`
+  multi: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>`,
+  audio: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>`,
+  kode: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`
 };
 
 const CHECK_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`;
@@ -14,6 +16,14 @@ const EXTERNAL_LINK_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="current
 
 let DATA = null;
 let activeCategory = null;
+
+// Used by the onerror handler on <img class="logo"> tags: if a logo file is
+// missing or fails to load, swap it for the plain category icon instead.
+window.__fallbackAvatar = function (toolId) {
+  const tool = DATA.tools.find(t => t.id === toolId);
+  const icon = tool ? primaryIcon(tool) : ICONS.multi;
+  return `<span class="tool-avatar">${icon}</span>`;
+};
 
 async function init() {
   const res = await fetch('data/tools.json');
@@ -109,7 +119,7 @@ function countMatches(term) {
 }
 
 function primaryIcon(tool) {
-  const order = ['multi', 'gambar', 'video', 'presentasi', 'tulisan', 'dokumen'];
+  const order = ['multi', 'gambar', 'video', 'presentasi', 'tulisan', 'dokumen', 'audio', 'kode'];
   const cat = order.find(c => tool.categories.includes(c)) || tool.categories[0];
   return ICONS[cat] || ICONS.multi;
 }
@@ -123,22 +133,30 @@ function renderToolRow(tool) {
   tags.push(`<span class="tag ${tool.pricing}">${labelForPricing(tool.pricing)}</span>`);
   if (tool.bahasa_indonesia) tags.push(`<span class="tag id">Dukung Bahasa Indonesia</span>`);
 
-  row.innerHTML = `
-    <div class="tool-head">
-      <span class="tool-avatar">${primaryIcon(tool)}</span>
-      <h3 class="tool-name">${tool.name}</h3>
-    </div>
-    <div class="tool-tags">${tags.join('')}</div>
-    <div class="tool-body">
-      <p class="kelebihan"><span class="line-icon good">${CHECK_ICON}</span><span class="label">Kelebihan.</span>${tool.kelebihan}</p>
-      <p class="keter"><span class="line-icon warn">${ALERT_ICON}</span><span class="label">Keterbatasan.</span>${tool.keterbatasan}</p>
-      <p class="free-limit"><span class="line-icon gift">${GIFT_ICON}</span><span class="label">Jatah gratis.</span>${tool.free_limit}</p>
-    </div>
-    ${tool.catatan_pribadi ? `<p class="tool-note">${tool.catatan_pribadi}</p>` : ''}
-    <a class="tool-cta" href="${tool.affiliate_url || tool.url}" target="_blank" rel="noopener sponsored">
-      Coba tool ini ${EXTERNAL_LINK_ICON}
-    </a>
-  `;
+  // Prefer a real logo file (data/tools.json -> "logo"). If it's missing or
+  // fails to load (404), fall back to the plain category icon automatically.
+  const avatarHtml = tool.logo
+    ? `<span class="tool-avatar has-logo">
+         <img src="${tool.logo}" alt="Logo ${tool.name}" loading="lazy"
+              onerror="this.closest('.tool-avatar').outerHTML = window.__fallbackAvatar('${tool.id}')">
+       </span>`
+    : `<span class="tool-avatar">${primaryIcon(tool)}</span>`;
+
+  row.innerHTML = [
+    '<div class="tool-head">',
+    avatarHtml,
+    `<h3 class="tool-name">${tool.name}</h3>`,
+    '</div>',
+    `<div class="tool-tags">${tags.join('')}</div>`,
+    '<div class="tool-body">',
+    `<p class="kelebihan"><span class="line-icon good">${CHECK_ICON}</span><span class="label">Kelebihan.</span>${tool.kelebihan}</p>`,
+    `<p class="keter"><span class="line-icon warn">${ALERT_ICON}</span><span class="label">Keterbatasan.</span>${tool.keterbatasan}</p>`,
+    `<p class="free-limit"><span class="line-icon gift">${GIFT_ICON}</span><span class="label">Jatah gratis.</span>${tool.free_limit}</p>`,
+    '</div>',
+    tool.catatan_pribadi ? `<p class="tool-note">${tool.catatan_pribadi}</p>` : '',
+    `<a class="tool-cta" href="${tool.affiliate_url || tool.url}" target="_blank" rel="noopener sponsored">Coba tool ini ${EXTERNAL_LINK_ICON}</a>`
+  ].join('\n');
+
   return row;
 }
 
