@@ -1,4 +1,4 @@
-const CACHE_NAME = 'promptless-v5';
+const CACHE_NAME = 'promptless-v6';
 const ASSETS = [
   './',
   './index.html',

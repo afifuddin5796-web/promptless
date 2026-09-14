@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-10",
+  "updated": "2026-09-14",
   "categories": [
     {
       "id": "gambar",
@@ -54,7 +54,7 @@
       "multi": true,
       "pricing": "freemium",
       "free_limit": "225 token gratis per hari, tanpa kartu kredit",
-      "kelebihan": "Satu ruang kerja untuk teks-ke-gambar, gambar-ke-video, dan teks-ke-video. Cocok mengubah foto produk diam jadi video bergerak untuk Reels/TikTok.",
+      "kelebihan": "Satu ruang kerja untuk teks-ke-gambar, gambar-ke-video, dan teks-ke-video. Cocok mengubah foto produk diam jadi video bergerak untuk Reels/TikTok, dan bisa langsung menyisipkan dubbing serta backsound tanpa perlu aplikasi edit terpisah.",
       "keterbatasan": "Fitur model premium dan durasi video lebih panjang perlu upgrade berbayar.",
       "bahasa_indonesia": false,
       "tingkat": "pemula",
@@ -120,7 +120,8 @@
       "tingkat": "pemula",
       "url": "https://claude.ai/",
       "affiliate_url": null,
-      "logo": "assets/logos/claude.png"
+      "logo": "assets/logos/claude.png",
+      "catatan_pribadi": "Dari pengalaman membandingkan langsung dengan ChatGPT dan Gemini untuk menulis caption/deskripsi, hasil Claude dinilai paling personal dan natural."
     },
     {
       "id": "canva-ai",
