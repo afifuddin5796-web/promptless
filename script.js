@@ -53,7 +53,7 @@ function renderCategoryNav() {
     btn.dataset.cat = cat.id;
     btn.innerHTML = `
       <span class="cat-icon">${ICONS[cat.id] || ''}</span>
-      <span class="cat-text">${cat.label}<span class="hint">${cat.hint}</span></span>
+      <span class="cat-text">${cat.label}</span>
     `;
     btn.addEventListener('click', () => {
       activeCategory = cat.id;
