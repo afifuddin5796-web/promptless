@@ -48,6 +48,24 @@ function formatDate(iso) {
 function renderCategoryNav() {
   const nav = document.getElementById('catNav');
   nav.innerHTML = '';
+
+  // Tombol "Semua" untuk meriset filter kategori
+  const allBtn = document.createElement('button');
+  allBtn.dataset.cat = 'all';
+  allBtn.className = !activeCategory ? 'active' : '';
+  allBtn.innerHTML = `
+    <span class="cat-icon">${ICONS.multi}</span>
+    <span class="cat-text">Semua AI</span>
+  `;
+  allBtn.addEventListener('click', () => {
+    activeCategory = null;
+    document.getElementById('searchInput').value = '';
+    updateActiveNavButton();
+    renderResults();
+  });
+  nav.appendChild(allBtn);
+
+  // Render kategori bawaan dari JSON
   DATA.categories.forEach(cat => {
     const btn = document.createElement('button');
     btn.dataset.cat = cat.id;
@@ -65,6 +83,15 @@ function renderCategoryNav() {
   });
 }
 
+function updateActiveNavButton() {
+  document.querySelectorAll('.cat-nav button').forEach(b => {
+    if (!activeCategory && b.dataset.cat === 'all') {
+      b.classList.add('active');
+    } else {
+      b.classList.toggle('active', b.dataset.cat === activeCategory);
+    }
+  });
+}
 function updateActiveNavButton() {
   document.querySelectorAll('.cat-nav button').forEach(b => {
     b.classList.toggle('active', b.dataset.cat === activeCategory);
